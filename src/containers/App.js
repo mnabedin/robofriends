@@ -21,13 +21,13 @@ class App extends Component {
         .then(users => this.setState({ robots: users }));
     }
 
-    onSearchChange = (event) =>{
+    onSearchChange = (event) => {
         this.setState({ searchfield: event.target.value });
     }
 
     render() {
         const { robots, searchfield } = this.state;
-        const filteredRobots = robots.filter(robot =>{
+        const filteredRobots = robots.filter(robot => {
             return robot.name.toLowerCase().includes(searchfield.toLowerCase());
         })
         if (!robots.length) {
